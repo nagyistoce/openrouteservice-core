@@ -237,9 +237,15 @@ OpenRouteService.Map = {
 				cursor : "pointer"
 			}
 		});
+		
+		//accessibility
+		var layerAccessibility = new OpenLayers.Layer.Vector(OpenRouteService.Map.ACCESSIBILITY, {
+			displayInLayerSwitcher : false
+		});
+		layerAccessibility.redraw(true);
 
 		//define order
-		this.map.addLayers([layerRouteLines, layerTrack, layerRouteInstructions, layerSearch, layerGeolocation, layerPoi, layerRoutePoints, layerAvoid]);
+		this.map.addLayers([layerAccessibility, layerRouteLines, layerTrack, layerRouteInstructions, layerSearch, layerGeolocation, layerPoi, layerRoutePoints, layerAvoid]);
 	},
 	/**
 	 * private method, applies map style information
@@ -372,3 +378,4 @@ OpenRouteService.Map.POI = 'poi';
 OpenRouteService.Map.SEARCH = 'searchResults';
 OpenRouteService.Map.AVOID = 'avoidAreas';
 OpenRouteService.Map.TRACK = 'track';
+OpenRouteService.Map.ACCESSIBILITY = 'accessibility analysis'

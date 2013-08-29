@@ -6,7 +6,7 @@ OpenRouteService.OpenLS.ReverseGeocode = Class.create(OpenRouteService.OpenLS, {
 
 	/**
 	 * builds an XML request based on the given parameters which can be sent to the service.
-	 * @point: point to search for as XXX
+	 * @point: point to search for
 	 * @language: language to present the results in as short String, e.g. 'en'
 	 */
 	buildRequest : function(point, language) {

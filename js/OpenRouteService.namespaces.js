@@ -6,11 +6,13 @@ OpenRouteService.namespaces = {
 	ows : 'http://www.opengis.net/ows/1.1',
 	xlink : 'http://www.w3.org/1999/xlink',
 	xsi : 'http://www.w3.org/2001/XMLSchema-instance',
-	ascc : 'http://www.ascc.net/xml/schematron'
+	ascc : 'http://www.ascc.net/xml/schematron',
+	analyse : 'http://www.geoinform.fh-mainz.de/aas'
 };
 
 OpenRouteService.namespaces.schemata = {
 	directoryService : 'http://www.opengis.net/xls http://schemas.opengis.net/ols/1.1.0/DirectoryService.xsd',
+	analyseService : 'http://www.geoinform.fh-mainz.de/aas',
 	gatewayService : 'http://www.opengis.net/xls http://schemas.opengis.net/ols/1.1.0/GatewayService.xsd',
 	locationUtilityService : 'http://www.opengis.net/xls http://schemas.opengis.net/ols/1.1.0/LocationUtilityService.xsd',
 	presentationService : 'http://www.opengis.net/xls http://schemas.opengis.net/ols/1.1.0/PresentationService.xsd',
@@ -24,7 +26,7 @@ OpenRouteService.namespaces.services = {
 	geocoding : 'http://openls.geog.uni-heidelberg.de/testing2011/geocode', //for address search requests
 	routing : 'http://openls.geog.uni-heidelberg.de/testing2011/route', //for routing requests
 	directory : 'http://openls.geog.uni-heidelberg.de/testing2011/directory', //for POI search requests
-	//analyse : 'http://openls.geog.uni-heidelberg.de/osm/eu/analyse',
+	analyse : 'http://openls.geog.uni-heidelberg.de/osm/eu/analyse',  //for accessibility analysis
 	wps : 'http://wasserkuppe.geog.uni-heidelberg.de:8080/deegree3wps/services' //for calculation of polygon around route for POI search
 	//profile: 'http://watzmann.geog.uni-heidelberg.de:8080/deegree/all' 			//for height profile of route
 };

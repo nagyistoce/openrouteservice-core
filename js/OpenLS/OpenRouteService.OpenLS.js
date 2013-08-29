@@ -4,21 +4,21 @@
  * Parts that can be used by all request types are specified in the main class OpenLS, parts that differ are implemented in the child classes.
  */
 OpenRouteService.OpenLS = Class.create({
-	
+
 	/**
 	 * XML request that is sent to the service
 	 */
 	xmlRequest : null,
 	/**
-	 * XML response from the service 
+	 * XML response from the service
 	 */
 	xmlResponse : null,
-	
+
 	/**
 	 * did any errors occur during the request? e.g. a 404 response
 	 */
 	hasErrors : false,
-	
+
 	/**
 	 * generates a new XML Writer and the basic XML document node for the request
 	 * Note: call finishRequest() to close the document and the writer
@@ -69,12 +69,12 @@ OpenRouteService.OpenLS = Class.create({
 		var requestCallback = function() {
 			//bind the response in the class variable
 			if (request.responseXML) {
-			self.xmlResponse = request.responseXML;
+				self.xmlResponse = request.responseXML;
 			} else {
 				//IE doesn't know responseXML, it can only provide text that has to be parsed to XML...
 				self.xmlResponse = OpenRouteService.Util.parseStringToDOM(request.responseText);
 			}
-			
+
 			if (request.status != 200 || !self.xmlResponse) {
 				// do something to calm the user
 				self.hasErrors = true;
@@ -88,4 +88,4 @@ OpenRouteService.OpenLS = Class.create({
 			success : successCallback
 		});
 	}
-});
+}); 

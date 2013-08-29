@@ -98,6 +98,12 @@ var lang_en = {
 		'gpxDownloadText' : 'Download of current route in GPX format',
 		'gpxUploadRouteText' :  'Upload a route from a GPX-file with re-calculation',
 		'gpxUploadTrackText' :  'Upload of GPX-track for display on the map',
+		
+	//Accessibility Analysis
+		'accessibilityAnalysis' : 'Accessibility analysis',
+		'setAccessibilityMinutes' : 'Select minutes: ',
+		'analyze' : 'Analyze',
+		'accessibilityError' : 'An error occured during the accessibility analysis. Did you forget to set a start point?',
 	
 	// List languages
 		'de': 'German',

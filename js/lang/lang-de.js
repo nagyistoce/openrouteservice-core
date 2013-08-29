@@ -96,6 +96,12 @@ var lang_de = {
 		'gpxDownloadText' :  'Aktuelle Route im GPX-Format herunterladen',
 		'gpxUploadRouteText' :  'GPX-Route aus Datei anzeigen und neuberechnen',
 		'gpxUploadTrackText' :  'GPX-Track aus Datei anzeigen', 
+		
+	//accessibility Analysis
+		'accessibilityAnalysis' : 'Erreichbarkeits-Analyse',
+		'setAccessibilityMinutes' : 'Minuten ausw&auml;hlen: ',
+		'analyze' : 'Analysieren',
+		'accessibilityError' : 'W&auml;hrend der Erreichbarkeits-Analyse ist leider ein Fehler aufgetreten. Haben Sie vergessen einen Startpunkt zu setzen?',
 	
 	// List languages
 		'de':  'Deutsch',

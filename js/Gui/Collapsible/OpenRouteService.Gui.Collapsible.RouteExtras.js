@@ -40,6 +40,41 @@ OpenRouteService.Gui.Collapsible.RouteExtras = Class.create(OpenRouteService.Gui
 		routeLink.insert(linkBtn);
 		this.body.insert(routeLink);
 		
+		//for accessibility analysis
+		var accessibility = new Element('div', {
+			'class' : 'panel panelMedium'
+		});
+		accessibility.insert(new Element('p').update(OpenRouteService.Preferences.translate('accessibilityAnalysis')));
+		var inputTxt = new Element('span').update(OpenRouteService.Preferences.translate('setAccessibilityMinutes'));
+		var inputField = new Element('input', {
+			'type' : 'text',
+			'id' : 'accessibilityDistance',
+			'class' : 'textfield',
+			'value' : '15' 
+		});
+		var linkBtn = new Element('btn', {
+			'class' : 'btn'
+		}).update(OpenRouteService.Preferences.translate('analyze'));
+		linkBtn.observe('click', function() {
+			document.getElementById('accessibilityError').hide();
+			var time = document.getElementById('accessibilityDistance').value;
+			var successful = new OpenRouteService.Gui.AccessibilityAnalysis(self.routeInstance).analyze(time);
+			if (successful == false) {
+				document.getElementById('accessibilityError').show();
+			}		
+		});
+		var accessibilityError = new Element('div', {
+			'class' : 'alert alert-error',
+			'id' : 'accessibilityError'
+		}).update(OpenRouteService.Preferences.translate('accessibilityError'));
+		accessibilityError.hide();		
+		
+		accessibility.insert(inputTxt);
+		accessibility.insert(inputField);
+		accessibility.insert(linkBtn);
+		accessibility.insert(accessibilityError);
+		this.body.insert(accessibility);
+		
 		if (OpenRouteService.Preferences.version == OpenRouteService.VERSION_EXTENDED) {
 			this.body.insert(new Element('label').insert('<b>GPX</b>'));
 		}
