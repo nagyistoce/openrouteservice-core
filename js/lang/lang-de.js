@@ -77,7 +77,7 @@ var lang_de = {
 		'Pedestrian':  'Fußg&auml;nger',
 		'Bicycle':  'K&uuml;rzester Weg',
 		'BicycleSafety':  'Sicherster Weg',
-		'BicycleRoute':  'Bevorzugter Fahrradweg',
+		'BicycleRoute':  'Bevorzuge Fahrradweg',
 		'BicycleMTB':  'Mountainbike',
 		'BicycleRacer':  'Rennrad',
 		
@@ -101,6 +101,7 @@ var lang_de = {
 		'accessibilityAnalysis' : 'Erreichbarkeits-Analyse',
 		'setAccessibilityMinutes' : 'Minuten ausw&auml;hlen: ',
 		'analyze' : 'Analysieren',
+		'calculatingAccessibility' : 'Die Erreichbarkeit wird analysiert...',
 		'accessibilityError' : 'W&auml;hrend der Erreichbarkeits-Analyse ist leider ein Fehler aufgetreten. Haben Sie vergessen einen Startpunkt zu setzen?',
 	
 	// List languages
@@ -130,7 +131,7 @@ var lang_de = {
 		'extendedVersion' :  'Erweiterte Version',
 	
 	//Site Preferences
-		'sitePreferences' : 'Seiteneinstellungen', 
+		'sitePreferences' : 'Optionen', 
 		'language':  'Sprachen',
 		'distance' :  'Entfernungseinheiten',
 		'version' : 'Version',

@@ -79,7 +79,7 @@ var lang_en = {
 		'Pedestrian': 'pedestrian',
 		'Bicycle': 'shortest route',
 		'BicycleSafety': 'safest route',
-		'BicycleRoute': 'preferred bicycle lane',
+		'BicycleRoute': 'prefere bicycle lane',
 		'BicycleMTB': 'mountain bike',
 		'BicycleRacer': 'racing bike',
 		
@@ -103,6 +103,7 @@ var lang_en = {
 		'accessibilityAnalysis' : 'Accessibility analysis',
 		'setAccessibilityMinutes' : 'Select minutes: ',
 		'analyze' : 'Analyze',
+		'calculatingAccessibility' : 'The accessibility is being analyzed...',
 		'accessibilityError' : 'An error occured during the accessibility analysis. Did you forget to set a start point?',
 	
 	// List languages
@@ -132,7 +133,7 @@ var lang_en = {
 		'extendedVersion' : 'extended version',
 	
 	//Site Preferences
-		'sitePreferences' : 'Site Preferences',
+		'sitePreferences' : 'Preferences',
 		'language': 'Languages',
 		'distance' : 'Distance Units',
 		'version' : 'Version',

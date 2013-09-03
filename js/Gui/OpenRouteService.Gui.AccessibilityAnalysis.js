@@ -63,6 +63,9 @@ OpenRouteService.Gui.AccessibilityAnalysis = Class.create(OpenRouteService.Gui, 
 						'fillOpacity' : 0.4
 					};
 					layer.addFeatures([newFeature]);
+					
+					//hide searching spinner
+					document.getElementById('accessibilityCalculation').hide();
 				});
 
 			}

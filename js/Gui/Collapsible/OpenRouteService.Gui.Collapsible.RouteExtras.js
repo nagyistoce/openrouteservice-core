@@ -57,12 +57,20 @@ OpenRouteService.Gui.Collapsible.RouteExtras = Class.create(OpenRouteService.Gui
 		}).update(OpenRouteService.Preferences.translate('analyze'));
 		linkBtn.observe('click', function() {
 			document.getElementById('accessibilityError').hide();
+			document.getElementById('accessibilityCalculation').show();
 			var time = document.getElementById('accessibilityDistance').value;
 			var successful = new OpenRouteService.Gui.AccessibilityAnalysis(self.routeInstance).analyze(time);
 			if (successful == false) {
 				document.getElementById('accessibilityError').show();
-			}		
+			}			
 		});
+		var accessibilityCalculation = new Element('div', {
+			'class' : 'alert alert-info searchingBlue',
+			'id' : 'accessibilityCalculation'
+		});
+		accessibilityCalculation.update(OpenRouteService.Preferences.translate('calculatingAccessibility'));
+		accessibilityCalculation.hide();
+		
 		var accessibilityError = new Element('div', {
 			'class' : 'alert alert-error',
 			'id' : 'accessibilityError'
@@ -72,6 +80,7 @@ OpenRouteService.Gui.Collapsible.RouteExtras = Class.create(OpenRouteService.Gui
 		accessibility.insert(inputTxt);
 		accessibility.insert(inputField);
 		accessibility.insert(linkBtn);
+		accessibility.insert(accessibilityCalculation);
 		accessibility.insert(accessibilityError);
 		this.body.insert(accessibility);
 		
