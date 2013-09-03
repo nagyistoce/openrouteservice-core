@@ -475,6 +475,7 @@ button.routeOptionsButton > img {
 	right: 0px;
 	height: 50px;
 	padding: 0px 10px 0px 20px;
+	/*background-color: yellow;*/
 	background-color: #FFFFFF; /*#f0f0f0;*/
 	border-bottom: 1px solid black;
 }
@@ -704,4 +705,13 @@ img {
 
 #avoidAreasToolbar > div.btn-group {
 	margin-left: 15px;
+}
+
+#accessibilityDistance {
+	width: 30px;
+	/*overwrite settings from bootstrap for input fields*/
+	padding: 2px 2px 0px 2px;
+	margin-right: 10px;
+	vertical-align: baseline;
+	text-align: center;
 }
