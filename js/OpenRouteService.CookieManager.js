@@ -8,6 +8,7 @@ OpenRouteService.CookieManager = Class.create({
 	cookieNameLayer : "Last-mapLayer",
 	cookieNameUnit : "DistanceUnits",
 	cookieNameLanguage : "Language",
+	cookieNameRoutingLanguage : "RoutingLanguage",
 	cookieNameVersion : "Version",
 
 	/**
@@ -127,14 +128,16 @@ OpenRouteService.CookieManager = Class.create({
 	 */
 	writeSitePrefs : function(arr) {
 		var language = arr[0];
-		var unit = arr[1];
-		var version = arr[2];
+		var routingLanguage = arr[1];
+		var unit = arr[2];
+		var version = arr[3];
 
 		var exdate = new Date();
 		//cookie expires in 30 days
 		exdate.setDate(exdate.getDate() + 30);
 
 		document.cookie = this.cookieNameLanguage + "=" + escape(language) + ";expires=" + exdate.toUTCString();
+		document.cookie = this.cookieNameRoutingLanguage + "=" + escape(routingLanguage) + ";expires=" + exdate.toUTCString();
 		document.cookie = this.cookieNameUnit + "=" + escape(unit) + ";expires=" + exdate.toUTCString();
 		document.cookie = this.cookieNameVersion + "=" + escape(version) + ";expires=" + exdate.toUTCString();
 	}

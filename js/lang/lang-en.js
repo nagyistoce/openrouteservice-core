@@ -107,10 +107,38 @@ var lang_en = {
 		'accessibilityError' : 'An error occured during the accessibility analysis. Did you forget to set a start point?',
 	
 	// List languages
-		'de': 'German',
 		'en': 'English',
-        
-        'fr': 'French',
+		'de': 'German',
+		
+		'bg' : 'Bulgarian',
+		'cz' : 'Czech',
+		'nl' : 'Dutch',
+		'hr' : 'Croatian',
+		'hu' : 'Quechua',
+		'nl_BE' : 'Dutch: Belgium',
+		'es' : 'Spanish',
+		'eo' : 'Esperanto',
+		'fi' : 'Finnish',
+		'fr': 'French',
+        'it' : 'Italian',
+        'pt_BR' : 'Portuguese',
+        'ro' : 'Romanian',
+        'ru' : 'Russian',
+        'se' : 'Swedish',
+        'dk' : 'Danish',
+        'tr' : 'Turkish',
+        'ca' : 'Catalan',
+        'ja' : 'Japanese',
+        'no' : 'Norwegian',
+        'vi' : 'Vietnamese',
+        'nb' : 'Norwegian Bokm&aring;l',
+        'de-rheinl' : 'German: Rhineland',
+        'de-opplat' : 'German: Low German',
+        'de-berlin' : 'German: Berlin',
+        'de-swabia' : 'German: Swabia',
+        'de-rhurpo' : 'German: Ruhr District',
+        'de-bay' : 'German: Bavaria',
+        'de-at-ooe' : 'German: Austria',
 	
 	// List distance units
 		'km': 'kilometers', 
@@ -135,9 +163,11 @@ var lang_en = {
 	//Site Preferences
 		'sitePreferences' : 'Preferences',
 		'language': 'Languages',
+		'routingLanguage' : 'Language for routing instructions',
 		'distance' : 'Distance Units',
 		'version' : 'Version',
 		'languageText': 'Please select your language:&nbsp;',
+		'routingLanguageText' : 'Please select your language:&nbsp;',
 		'distanceText' : 'Please select your distance unit:&nbsp;',
 		'versionText' : 'Please choose the number of options:&nbsp;',
 		

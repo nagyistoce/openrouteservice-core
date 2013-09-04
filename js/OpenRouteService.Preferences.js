@@ -4,10 +4,12 @@
 OpenRouteService.Preferences = {
 
 	language : null,
+	routingLanguage : null,
 	distanceUnit : null,
 	version : null,
 
 	getParamLanguage : 'lang',
+	getParamRoutingLanguage : 'routeLang',
 	getParamDistanceUnit : 'unit',
 	getParamVersion : 'version',
 
@@ -25,11 +27,15 @@ OpenRouteService.Preferences = {
 	loadPrefs : function() {
 		var cman = new OpenRouteService.CookieManager();
 		this.language = OpenRouteService.Util.readGetVar(this.getParamLanguage);
+		this.routingLanguage = OpenRouteService.Util.readGetVar(this.getParamRoutingLanguage);
 		this.distanceUnit = OpenRouteService.Util.readGetVar(this.getParamDistaneUnit);
 
 		//if GET vars are not set, read cookies
 		if (!this.language || this.language.length == 0) {
 			this.language = cman.readCookie(cman.cookieNameLanguage);
+		}
+		if (!this.routingLanguage || this.routingLanguage.length == 0) {
+			this.routingLanguage = cman.readCookie(cman.cookieNameRoutingLanguage);
 		}
 		if (!this.distanceUnit || this.distanceUnit.length == 0) {
 			this.distanceUnit = cman.readCookie(cman.cookieNameUnit);
@@ -45,6 +51,12 @@ OpenRouteService.Preferences = {
 		} else {
 			//convert number from GET/ cookie to String, e.g. 1 -> 'de'
 			this.language = OpenRouteService.List.languages[this.language];
+		}
+		if (!this.routingLanguage || this.routingLanguage.length == 0) {
+			this.automSetRoutingLanguage();
+		} else {
+			//convert number from GET/ cookie to String, e.g. 1 -> 'de'
+			this.routingLanguage = OpenRouteService.List.routingLanguages[this.routingLanguage];
 		}
 		if (!this.distanceUnit || this.distanceUnit.length == 0) {
 			this.automSetDistanceUnit();
@@ -67,21 +79,23 @@ OpenRouteService.Preferences = {
 	savePrefs : function(arr) {
 		var route = arr[0];
 		var lang = arr[1];
-		var unit = arr[2];
-		var version = arr[3];
+		var routingLang = arr[2];
+		var unit = arr[3];
+		var version = arr[4];
 
 		this.loadPrefs();
-		if (!(this.language == lang && this.distanceUnit == unit)) {
+		if (!(this.language == lang && this.distanceUnit == unit && this.routingLanguage == routingLang)) {
 			//values have changed, save the new ones
 
 			//save prefs (lang, unit) in a cookie
-			new OpenRouteService.CookieManager().writeSitePrefs([lang, unit, version]);
+			new OpenRouteService.CookieManager().writeSitePrefs([lang, routingLang, unit, version]);
 			OpenRouteService.Preferences.language = OpenRouteService.List.languages[lang];
+			OpenRouteService.Preferences.routingLanguage = OpenRouteService.List.routingLanguages[routingLang];
 			OpenRouteService.Preferences.distanceUnit = OpenRouteService.List.distanceUnitsRoute[unit];
 			OpenRouteService.Preferences.version = OpenRouteService.List.version[version];
 
 			//append selection of prefs as GET variables in case the user does not allow cookies to be stored and reload the page
-			var query = window.location.search, deviceParam = this.getParamLanguage + "=" + lang + "&" + this.getParamDistanceUnit + "=" + unit + "&" + this.getParamVersion + "=" + version;
+			var query = window.location.search, deviceParam = this.getParamLanguage + "=" + lang + "&" + this.getParamRoutingLanguage + "=" + routingLang + "&" + this.getParamDistanceUnit + "=" + unit + "&" + this.getParamVersion + "=" + version;
 
 			//append other parameters to be able to restore route after recalculation
 			var layers = OpenRouteService.Map.serializeLayers(route.routeInstance.map);
@@ -113,6 +127,17 @@ OpenRouteService.Preferences = {
 		} else {
 			//everything that is not one of the languages mentioned above is set so English
 			OpenRouteService.Preferences.language = 'en';
+		}
+	},
+	
+	automSetRoutingLanguage : function() {
+		var userLang = (navigator.language) ? navigator.language : navigator.userLanguage;
+		userLang = userLang.substring(0, userLang.indexOf('-'));
+		
+		if (jQuery.inArray(userLang, OpenRouteService.List.routingLanguages) > 0) {
+			OpenRouteService.Preferences.routingLanguage = userLang;
+		} else {
+			OpenRouteService.Preferences.routingLanguage = OpenRouteService.List.routingLanguages[0];
 		}
 	},
 	/**

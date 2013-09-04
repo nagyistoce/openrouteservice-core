@@ -363,7 +363,7 @@ OpenRouteService.Gui.Route = Class.create(OpenRouteService.Gui, {
 		var self = this;
 
 		var routeService = new OpenRouteService.OpenLS.Route();
-		routeService.buildRequest(routePlan, OpenRouteService.Preferences.language);
+		routeService.buildRequest(routePlan, OpenRouteService.Preferences.routingLanguage);
 
 		this.openLSRequestCounter++;
 

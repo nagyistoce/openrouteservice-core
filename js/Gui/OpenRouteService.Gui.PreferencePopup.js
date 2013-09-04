@@ -50,13 +50,23 @@ OpenRouteService.Gui.PreferencePopup = Class.create(OpenRouteService.Gui, {
 		divBody.appendChild(heading);
 		divBody.appendChild(text);
 		
-		var heading = new Element('h4').insert(OpenRouteService.Preferences.translate('language'));
-		var text = new Element('p').insert(OpenRouteService.Preferences.translate('languageText'));
+		heading = new Element('h4').insert(OpenRouteService.Preferences.translate('language'));
+		text = new Element('p').insert(OpenRouteService.Preferences.translate('languageText'));
 		this.selectionLang = new Element('select', {
 			'id' : 'languagePrefs'
 		});
 		this.buildOptionList(this.selectionLang, OpenRouteService.List.languages, true, OpenRouteService.Preferences.language);
 		text.appendChild(this.selectionLang);
+		divBody.appendChild(heading);
+		divBody.appendChild(text);
+		
+		heading = new Element('h4').insert(OpenRouteService.Preferences.translate('routingLanguage'));
+		text = new Element('p').insert(OpenRouteService.Preferences.translate('routingLanguageText'));
+		this.selectionRoutingLang = new Element('select', {
+			'id' : 'routingLanguagePrefs'
+		});
+		this.buildOptionList(this.selectionRoutingLang, OpenRouteService.List.routingLanguages, true, OpenRouteService.Preferences.routingLanguage);
+		text.appendChild(this.selectionRoutingLang);
 		divBody.appendChild(heading);
 		divBody.appendChild(text);
 
@@ -134,6 +144,12 @@ OpenRouteService.Gui.PreferencePopup = Class.create(OpenRouteService.Gui, {
 				lang = this.selectionLang.childNodes[i].value;
 			}
 		}
+		var routingLang = this.selectionRoutingLang.childNodes[0];
+		for (var i = 0; i < this.selectionRoutingLang.length; i++) {
+			if (this.selectionRoutingLang.childNodes[i].selected) {
+				routingLang = this.selectionRoutingLang.childNodes[i].value;
+			}
+		}
 		var unit = this.selectionUnit.childNodes[0];
 		for (var i = 0; i < this.selectionUnit.length; i++) {
 			if (this.selectionUnit.childNodes[i].selected) {
@@ -146,6 +162,6 @@ OpenRouteService.Gui.PreferencePopup = Class.create(OpenRouteService.Gui, {
 				version = this.selectionVersion.childNodes[i].value;
 			}
 		}
-		OpenRouteService.Preferences.savePrefs([route, lang, unit, version]);
+		OpenRouteService.Preferences.savePrefs([route, lang, routingLang, unit, version]);
 	}
 });
