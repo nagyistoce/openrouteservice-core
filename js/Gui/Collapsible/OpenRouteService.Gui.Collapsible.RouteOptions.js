@@ -178,7 +178,7 @@ OpenRouteService.Gui.Collapsible.RouteOptions = Class.create(OpenRouteService.Gu
 		}
 
 		
-		
+		var self = this;
 		function handleButtonClick(ev) {
 			var actives = 0;
 			var target = (ev.target.tagName === 'BUTTON' ? ev.target : $(ev.target).up(0));
@@ -193,7 +193,6 @@ OpenRouteService.Gui.Collapsible.RouteOptions = Class.create(OpenRouteService.Gu
 					$$('button[value="' + key + '"]')[0].removeClassName('active');
 				}
 			}
-			
 			
 			//if there is one control active...
 			if (actives > 0) {
