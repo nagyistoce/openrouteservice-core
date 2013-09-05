@@ -133,7 +133,7 @@ var lang_de = {
         'de-opplat' : 'Deutsch: Plattdeutsch',
         'de-berlin' : 'Deutsch: Berlin',
         'de-swabia' : 'Deutsch: Schwaben',
-        'de-rhurpo' : 'Deutsch: Ruhrpott',
+        'de-ruhrpo' : 'Deutsch: Ruhrpott',
         'de-bay' : 'Deutsch: Bayern',
         'de-at-ooe' : 'Deutsch: &Ouml;sterreich',
 	

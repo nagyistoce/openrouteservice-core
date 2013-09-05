@@ -136,7 +136,7 @@ var lang_en = {
         'de-opplat' : 'German: Low German',
         'de-berlin' : 'German: Berlin',
         'de-swabia' : 'German: Swabia',
-        'de-rhurpo' : 'German: Ruhr District',
+        'de-ruhrpo' : 'German: Ruhr District',
         'de-bay' : 'German: Bavaria',
         'de-at-ooe' : 'German: Austria',
 	

@@ -110,22 +110,21 @@ OpenRouteService.Map = {
 		this.numOverlays = 3;
 		//hillshade, TMC1, TMC2
 
-		//layer 1 - mapnik
+		//layer 1 - open map surfer
+		var mapSurfer_name = "OpenMapSurfer Roads";
+		var mapSurfer_options = {
+		type : 'png',
+		displayOutsideMaxExtent : true,
+		isBaseLayer : true,
+		numZoomLevels : 19,
+		attribution : 'Maps and data: &copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+		};
+		var layerMapSurfer = new OpenLayers.Layer.XYZ(mapSurfer_name, OpenRouteService.namespaces.layerMapSurfer, mapSurfer_options);
+		this.map.addLayer(layerMapSurfer);
+		
+		//layer 2 - mapnik
 		var osmLayer = new OpenLayers.Layer.OSM();
 		this.map.addLayer(osmLayer);
-
-		//TODO layer is not available at the moment
-		//layer 2 - open map surfer
-		// var mapSurfer_name = "OpenMapSurfer Roads";
-		// var mapSurfer_options = {
-		// type : 'png',
-		// displayOutsideMaxExtent : true,
-		// isBaseLayer : true,
-		// numZoomLevels : 19,
-		// attribution : 'Maps and data: &copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a> and contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-		// };
-		// var layerMapSurfer = new OpenLayers.Layer.XYZ(mapSurfer_name, OpenRouteService.namespaces.layerMapSurfer, mapSurfer_options);
-		// this.map.addLayer(layerMapSurfer);
 
 		// //layer 3 - osm-wms worldwide
 		var wms_name = "OSM-WMS worldwide";
