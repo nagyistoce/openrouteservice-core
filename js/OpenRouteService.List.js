@@ -5,7 +5,7 @@ OpenRouteService.VERSION_STANDARD = 'standardVersion';
 OpenRouteService.VERSION_EXTENDED = 'extendedVersion';
 
 OpenRouteService.List = {
-	languages: ['de', 'en'],
+	languages: ['de', 'en', 'pl'],
 	
 	routingLanguages : ['en', 'de', 'bg', 'cz', 'nl', 'hr', 'hu', 'nl_BE', 'es', 'eo', 'fi', 'fr', 'it', 'pt_BR', 'ro', 'ru', 'se', 'dk', 'tr', 'ca', 'ja', 'no', 'vi', 'nb', 'de-rheinl', 'de-opplat', 'de-berlin', 'de-swabia', 'de-ruhrpo', 'de-at-ooe', 'de-bay'],
 	

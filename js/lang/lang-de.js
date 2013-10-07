@@ -107,11 +107,12 @@ var lang_de = {
 	// List languages
 		'en': 'Englisch',
 		'de':  'Deutsch',
+		'pl' : 'Polnisch',
 		'bg' : 'Bulgarisch',
 		'cz' : 'Tschechisch',
 		'nl' : 'Holl&auml;ndisch',
 		'hr' : 'Kroatisch',
-		'hu' : 'Quechua',
+		'hu' : 'Ungarisch',
 		'nl_BE' : 'Holl&auml;ndisch: Belgien',
 		'es' : 'Spanisch',
 		'eo' : 'Esperanto',

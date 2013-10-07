@@ -27,7 +27,7 @@ OpenRouteService.Gui.Collapsible.RouteInstructions = Class.create(OpenRouteServi
 			'id' : 'zoomToRouteButton',
 			'class' : 'zoomToRoute clickable'
 		});
-		this.zoomToRouteButton.textContent = OpenRouteService.Preferences.translate('zoomToRoute');
+		this.zoomToRouteButton.innerHTML = OpenRouteService.Preferences.translate('zoomToRoute');
 
 		this.zoomToRouteButton.observe('click', function() {
 			route.zoomToRoute();
