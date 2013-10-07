@@ -7,7 +7,7 @@ OpenRouteService.VERSION_EXTENDED = 'extendedVersion';
 OpenRouteService.List = {
 	languages: ['de', 'en', 'pl'],
 	
-	routingLanguages : ['en', 'de', 'bg', 'cz', 'nl', 'hr', 'hu', 'nl_BE', 'es', 'eo', 'fi', 'fr', 'it', 'pt_BR', 'ro', 'ru', 'se', 'dk', 'tr', 'ca', 'ja', 'no', 'vi', 'nb', 'de-rheinl', 'de-opplat', 'de-berlin', 'de-swabia', 'de-ruhrpo', 'de-at-ooe', 'de-bay'],
+	routingLanguages : ['en', 'de', 'pl', 'bg', 'cz', 'nl', 'hr', 'hu', 'nl_BE', 'es', 'eo', 'fi', 'fr', 'it', 'pt_BR', 'ro', 'ru', 'se', 'dk', 'tr', 'ca', 'ja', 'no', 'vi', 'nb', 'de-rheinl', 'de-opplat', 'de-berlin', 'de-swabia', 'de-ruhrpo', 'de-at-ooe', 'de-bay'],
 	
 	//if this is changed, please adapt the distance calculation in ORS.Gui.SearchPoi.observeInputfield
 	distanceUnits: ['m', 'km', 'yd', 'mi'],
